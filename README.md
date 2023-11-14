@@ -1,0 +1,2 @@
+# neva-mt-counter
+The library to connect Neva MT power counters (Библиотека для связи со счетчиками электроэнергии Нева МТ (ООО "Тайпит - ИП"))
