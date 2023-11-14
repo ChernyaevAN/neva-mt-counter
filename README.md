@@ -15,3 +15,9 @@ All warnings and errors are fixed.
 
 Добавлена возможность подключения через TCP/IP сокет при схеме подключения счетчика, указанной ниже.
 TCP/IP connection ability added.
+
+Проверена возможность подключения через виртуальный последовательный порт на базе [socat](http://www.dest-unreach.org/socat/doc/socat.html).
+[Socat](http://www.dest-unreach.org/socat/doc/socat.html) virtual serial port connection ability checked.
+
+### Создание виртуального последовательного порта
+Для создания виртуального последовательного порта можно использовать [socat](http://www.dest-unreach.org/socat/doc/socat.html).
