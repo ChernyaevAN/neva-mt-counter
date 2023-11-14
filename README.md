@@ -21,7 +21,7 @@ TCP/IP connection ability added.
 
 ### Создание виртуального последовательного порта
 Для создания виртуального последовательного порта можно использовать [socat](http://www.dest-unreach.org/socat/doc/socat.html).
-'sudo socat  pty,link=/dev/virtualcomX,raw  tcp:192.168.XXX.XXX:XXXXX'
+`sudo socat  pty,link=/dev/virtualcomX,raw  tcp:192.168.XXX.XXX:XXXXX`
 При этом конвертер интерфейсов должен работать в режиме сервера. После IP адреса указывается порт подключения. В указанном примере создается последовательный порт /dev/virtualcomX, где X - номер порта.
 
 ### Недостатки использования виртуальных последовательных портов
