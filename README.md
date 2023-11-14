@@ -20,7 +20,7 @@ TCP/IP connection ability added.
 [Socat](http://www.dest-unreach.org/socat/doc/socat.html) virtual serial port connection ability checked.
 
 ### Создание виртуального последовательного порта
-Для создания виртуального последовательного порта можно использовать [socat](http://www.dest-unreach.org/socat/doc/socat.html).
+Для создания виртуального последовательного порта можно использовать [socat](http://www.dest-unreach.org/socat/doc/socat.html).<br>
 `sudo socat  pty,link=/dev/virtualcomX,raw  tcp:192.168.XXX.XXX:XXXXX`
 При этом конвертер интерфейсов должен работать в режиме сервера. После IP адреса указывается порт подключения. В указанном примере создается последовательный порт /dev/virtualcomX, где X - номер порта.
 
