@@ -13,8 +13,10 @@ Original code is on [this](https://github.com/vika-sonne/NevaMt3xx/) and [this](
 Исправлены все ошибки и предупреждения при исполнении исходного кода.
 All warnings and errors are fixed.
 
-Добавлена возможность подключения через TCP/IP сокет при схеме подключения счетчика, указанной ниже.
+Добавлена возможность подключения через TCP/IP сокет при схеме подключения счетчика, указанной ниже.<br>
 TCP/IP connection ability added.
+
+
 
 Проверена возможность подключения через виртуальный последовательный порт на базе [socat](http://www.dest-unreach.org/socat/doc/socat.html).
 [Socat](http://www.dest-unreach.org/socat/doc/socat.html) virtual serial port connection ability checked.
