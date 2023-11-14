@@ -16,9 +16,6 @@ All warnings and errors are fixed.
 Добавлена возможность подключения через TCP/IP сокет при схеме подключения счетчика, указанной ниже.<br>
 TCP/IP connection ability added.
 ![изображение](https://github.com/ChernyaevAN/neva-mt-counter/assets/128255449/bc30b4a7-4834-4d76-ad30-874a7774a463)
-
-
-
 Проверена возможность подключения через виртуальный последовательный порт на базе [socat](http://www.dest-unreach.org/socat/doc/socat.html).
 [Socat](http://www.dest-unreach.org/socat/doc/socat.html) virtual serial port connection ability checked.
 
