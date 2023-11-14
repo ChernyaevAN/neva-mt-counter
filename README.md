@@ -25,4 +25,5 @@ TCP/IP connection ability added.
 При этом конвертер интерфейсов должен работать в режиме сервера. После IP адреса указывается порт подключения. В указанном примере создается последовательный порт /dev/virtualcomX, где X - номер порта.
 
 ### Использование виртуальных последовательных портов
-В исходном [коде](https://github.com/AlexObukhoff/neva-py3/) используется библиотека [pyserial](https://pypi.org/project/pyserial/). Не удается многократно использовать порт в связи со следующей [ошибкой](https://github.com/pyserial/pyserial/issues/196).
+В исходном [коде](https://github.com/AlexObukhoff/neva-py3/) используется библиотека [pyserial](https://pypi.org/project/pyserial/). Не удается многократно использовать порт в связи со следующей [ошибкой](https://github.com/pyserial/pyserial/issues/196).<br>
+При физическом подключении, указанном выше логичнее напрямую использовать TCP/IP сокет.
