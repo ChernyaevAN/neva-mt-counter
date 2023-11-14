@@ -8,3 +8,10 @@ Original code is on [this](https://github.com/vika-sonne/NevaMt3xx/) and [this](
 Для связи со счетчиками Нева МТ существует еще одна [библиотека](https://github.com/nnemirovsky/pyneva/).
 
 Исходный код проверялся на Python 3.10.7 под операционной системой Ubuntu 22.10.
+
+## Основные изменение (general changes)
+Исправлены все ошибки и предупреждения при исполнении исходного кода.
+All warnings and errors are fixed.
+
+Добавлена возможность подключения через TCP/IP сокет при схеме подключения счетчика, указанной ниже.
+TCP/IP connection ability added.
