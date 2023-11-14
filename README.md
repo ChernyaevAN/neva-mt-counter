@@ -1,28 +1,44 @@
-# Библиотека для связи со счетчиками Нева МТ
-The library to connect Neva MT power counters<br>
-Библиотека для связи со счетчиками электроэнергии Нева МТ (ООО "Тайпит - ИП")<br>
+# Origin code is on link
+https://github.com/vika-sonne/NevaMt3xx
+It is for Python 2.x
 
-Исходный код библиотеки взят [отсюда](https://github.com/vika-sonne/NevaMt3xx/) и [отсюда](https://github.com/AlexObukhoff/neva-py3/).<br>
-Original code is on [this](https://github.com/vika-sonne/NevaMt3xx/) and [this](https://github.com/AlexObukhoff/neva-py3/) links.<br>
+I only updated for Python 3.x Serial Port part 
 
-Для связи со счетчиками Нева МТ существует еще одна [библиотека](https://github.com/nnemirovsky/pyneva/).<br>
+1 Change serial.write(str)  and serial.read(s) with
+serial.write(ss.encode()) and serial.read(s.decode())
 
-Исходный код проверялся на Python 3.10.7 под операционной системой Ubuntu 22.10.<br>
+2. So, added one test (myneva.py) for get Current, Voltage, Power, etc from device
+Many thanks for original code !
 
-## Основные изменение (general changes)
-Исправлены все ошибки и предупреждения при исполнении исходного кода.
-All warnings and errors are fixed.
+# Original README.md
 
-Добавлена возможность подключения через TCP/IP сокет при схеме подключения счетчика, указанной ниже.<br>
-TCP/IP connection ability added.
-![изображение](https://github.com/ChernyaevAN/neva-mt-counter/assets/128255449/3842e0f7-f657-4e8e-9373-4aa854b8e7b5)<br>
-[Socat](http://www.dest-unreach.org/socat/doc/socat.html) virtual serial port connection ability checked.
+# NevaMt3xx
+Serial interface access library of electric power consumption counter of "Neva MT 3xx" type by Taipit (Saint-Petersburg) manufacturing
 
-### Создание виртуального последовательного порта
-Для создания виртуального последовательного порта можно использовать [socat](http://www.dest-unreach.org/socat/doc/socat.html).<br>
-`sudo socat  pty,link=/dev/virtualcomX,raw  tcp:192.168.XXX.XXX:XXXXX`<br>
-При этом конвертер интерфейсов должен работать в режиме сервера. После IP адреса указывается порт подключения. В указанном примере создается последовательный порт /dev/virtualcomX, где X - номер порта.
+# Нева МТ 3xx
+Работа со счётчиком потребления электроэнергии типа Нева МТ 3xx производства Тайпит (Санкт-Петербург). Работа с прибором учёта происходит согласно МЭК 61107 и [OBIS](http://www.dlms.com/documentation/listofstandardobiscodesandmaintenanceproces/index.html) кодам (кроме байта контрольной суммы пакета, он не соответствует МЭК 61107 (ISO 1155)). Использует [python 2](https://www.python.org/downloads/). Работа согласно протоколу МЕК 61107 реализована библиотекой, которая может быть использована для работы с другими типами приборов.
 
-### Использование виртуальных последовательных портов
-В исходном [коде](https://github.com/AlexObukhoff/neva-py3/) используется библиотека [pyserial](https://pypi.org/project/pyserial/). Не удается многократно использовать порт в связи со следующей [ошибкой](https://github.com/pyserial/pyserial/issues/196).<br>
-При физическом подключении, указанном выше, логичнее напрямую использовать TCP/IP сокет.
+Требует установки пакетов:
+1. [pySerial](https://pypi.org/project/pyserial/).
+Установить можно используя [pip](https://pypi.org/project/pip/) в одну строку командного интерпритатора: `pip install pyserial`. При этом проконтролировать, что используется pip необходимой версии python (для Windows - запуск pip.exe из необходимой папки).
+
+2. [argparse](https://pypi.org/project/argparse/).
+Установка аналогично: `pip install argparse`.
+
+## test_serial.py
+Утилита командной строки для работы со счётчиком. Производит считывание/запись значений OBIS параметров. Содержит алгоритм считывания архива получасовых показаний с разбором по 4-м тарифам согласно тарифному расписанию.
+Пример считывания версии счётчика:
+```
+> python test_serial.py -p ttyUSB0 --obis 60.01.04*FF
+000V0201
+```
+[Примеры запуска и работы утилиты](test_serial.log).
+
+Вывод справки: `python test_serial.py -?`.
+
+## meter_imitator.py
+Утилита командной строки - имитатор работы счётчика (считывание/запись параметров OBIS) для отладки и технологических прогонов сервисного п/о работы с этими счётчиками. Имитатор представляет сервер, ожидающий подключений по TCP порту. [Пример запуска имитатора](meter_imitator.sh) со списком значений для OBIS параметров, например: `-o 60.01.04*FF:000V020`. Значения даты и времени можно не задавать, тогда возвращаются текущие показания:
+- `00.09.02*FF`: дата, ГГММДД
+- `00.09.01*FF`: время, ЧЧММСС
+
+Вывод справки: `python meter_imitator.py -?`.
