@@ -1,21 +1,21 @@
 # Исходные коды (origin code)
+Origin code is [here](https://github.com/vika-sonne/NevaMt3xx), [here](https://github.com/dmnovikov/neva-py3) and [here](https://github.com/AlexObukhoff/neva-py3).<br> 
+Оригинальные исходные коды находятся [здесь](https://github.com/vika-sonne/NevaMt3xx), [здесь](https://github.com/dmnovikov/neva-py3) и [здесь](https://github.com/AlexObukhoff/neva-py3).<br> 
+Оригинальные исходные коды написаны для Python 2.x.<br><br>
+Также существует [библиотека](https://github.com/nnemirovsky/pyneva) для подключения к счетчикам, не связанная с указанными выше исходными кодами.
 
 # Библиотека для связи со счетчиками электроэнергии Нева МТ3хх
-Origin code is on link
-https://github.com/vika-sonne/NevaMt3xx
-It is for Python 2.x
-
-I only updated for Python 3.x Serial Port part 
-
-1 Change serial.write(str)  and serial.read(s) with
-serial.write(ss.encode()) and serial.read(s.decode())
-
-2. So, added one test (myneva.py) for get Current, Voltage, Power, etc from device
-Many thanks for original code !
+Библиотека тестировалась на Ubuntu x64 23.10 и Python 3.11.
+## Основные изменения
+1. Устранены все ошибки при компиляции
+2. Добавлена возможность подключения счетчиков через TCP сервер
+## Варианты подключения счетчиков
 
 # Средства отладки библиотеки
 
 # Имитатор счетчика
+
+# Внешние зависимости (requirements)
 
 # Original README.md
 
