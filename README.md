@@ -1,3 +1,5 @@
+# Исходные коды (origin code)
+
 # Библиотека для связи со счетчиками электроэнергии Нева МТ3хх
 Origin code is on link
 https://github.com/vika-sonne/NevaMt3xx
@@ -10,6 +12,10 @@ serial.write(ss.encode()) and serial.read(s.decode())
 
 2. So, added one test (myneva.py) for get Current, Voltage, Power, etc from device
 Many thanks for original code !
+
+# Средства отладки библиотеки
+
+# Имитатор счетчика
 
 # Original README.md
 
