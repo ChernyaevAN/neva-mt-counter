@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 # coding: utf-8
 
-from protocol import Mek61107
+from library import Mek61107
 
 
 class NevaMt3xx(Mek61107.Mek61107):
@@ -138,7 +138,7 @@ class NevaMt3xx_com(NevaMt3xx):
 			if cmd is not None:
 				if self.log is not None:
 					self.log.log_rcv(str(cmd))
-				print (cmd)
+				# print (cmd)
 				return cmd
 
 	def send(self, cmd):
