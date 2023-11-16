@@ -1,4 +1,5 @@
-# Origin code is on link
+# Библиотека для связи со счетчиками электроэнергии Нева МТ3хх
+Origin code is on link
 https://github.com/vika-sonne/NevaMt3xx
 It is for Python 2.x
 
